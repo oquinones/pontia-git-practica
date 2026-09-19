@@ -1,0 +1,15 @@
+name: Workflow Manual
+on:
+  workflow_dispatch:
+    inputs:
+      texto:
+        description: 'Añade un texto'
+        required: true
+        default: 'Orlando Quinones'
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Saludo personalizado
+        run: echo "Hola, ${{ github.event.inputs.texto }}!"
+        
